@@ -1,0 +1,105 @@
+Cacti ISP Billing Change Log
+
+Version 1.0.12
+
+-bug: Fixed issue with invalid number of arguments on rrdtool_function_graph causing the script to fail
+-bug: Updated documentation to reflect that Bandwidth Summation graphs are threshold of Bytes not Bits
+-bug: Fixed spelling mistakes
+-feature: Threshold tracking cache data purging, only 2 billing cycles are retained in the track file
+
+Version 1.0.11
+
+-bug: Fixed post process export file issue with Committed/Overage rate rows not being correctly inserted
+
+Version 1.0.10
+
+-feature: Threshold tracking of Committed/Overage rates to inform customer when the Overage started to be applied to rate
+-feature: Threshold notifications to customers when they are over their committed rate
+-feature: Added the ability to place a custom footer on billing email messages
+-feature: Added command line option to clear threshold tracking cache entries from track file
+-bug: Fixed issue with weekly time frame not calculating start date when none is supplied
+-bug: Fixed issue with the info command not showing file export information
+
+Version 1.0.9
+
+-feature: When using Minimum charge on a Committed rate with an amount of "0" the display will report a committed fixed rate instead of a zero value
+-bug: Fixed issue with rates not applying correctly when defined at the graph level
+-bug: Fixed issue with rates being processed in reverse order of what was indicated by info command results
+-bug: Fixed issue with multiple rates being able to be defined on a single section, config check will now report an issue in this case
+-bug: Fixed issue with XML parser not accepting "0" as a valid value
+-bug: Track file now properly sets encoding
+-bug: Track file now properly writes xml reserved characters
+-bug: Updated documentation for clarification
+
+Version 1.0.8
+
+-bug: Fixed issue with build command generation concerning XML encoding
+-bug: Fixed issue with deprecated variable references
+
+Version 1.0.7
+
+-feature: Minimum charge settable for "Regular" rates
+-feature: Minimum charge settable for "Committed" rates
+-feature: Added new rate "Fixed" 
+-feature: Added additional fields to export CSV file
+-feature: Added post processing script to create XML output
+-feature: Documentation updated with CSV file field definitions
+-feature: Enhanced -info command line output to include graph item id 
+-bug: Build command sets encoding correctly in outputted XML file
+-bug: Fixed issue with virtual hosting and missing $_SERVER global variables
+-bug: Fixed issue with -info command line output 
+-bug: Fixed issue with -list command detection of Nth Percentile  graph variables
+-bug: Fixed export CSV header names for consistent presentation
+
+Version 1.0.6
+
+-feature: Added support for CSV file export
+-feature: Added support for CSV file export post processing by user defined script
+-feature: Example post processing scripts provided in "scripts" directory 
+-bug: Fixed rounding problem on calculated totals less than 10E-6
+
+Version 1.0.5
+
+-feature: Added support for Cacti 0.8.7
+-bug: Fixed issue with configuration parsing routine not correctly informing of error
+-bug: Fixed output of info command to properly display Committed and Overage Rate information
+-bug: Fixed encoding issues for languages other than English
+
+
+Version 1.0.4
+
+-feature: Moved to Cacti Mailer class for emailing
+-feature: Added ability to specify SMTP server options
+-feature: Added tech option for additional tech support
+-bug: Fixed issue with mySQL 3.x 
+-bug: Fixed issue where error during email didn't stop track file update
+
+
+Version 1.0.3
+
+-bug: Fixed version checking to check sub version correctly.
+-bug: Fixed issue where text part of email message was reporting Committed amounts where it should have been reporting Overage amounts.
+
+
+Version 1.0.2
+
+-feature: Added additional identification information to debug output
+-feature: Added the ability to alter currency the rates are calculated in globally and/or per customer
+-feature: Added new method for testing configuration
+-feature: Added additional debug to billing interval calculation routine
+-bug: Fixed issue with interval calculation on monthly billing interval
+
+
+Version 1.0.1
+
+-feature: Enhancement to email definitions, allowing for text only and removal of csv attachment
+-feature: Moved email branding into configuration file. 
+-bug: Fix potential remote exploit with register_argc_argv enabled in PHP.
+-bug: Added caching of graph images so that images are not regenerated if they have already been generated
+-bug: Added CHANGELOG to the docs directory
+-bug: Added LICENSE to the docs directory
+
+
+Version 1.0.0
+
+- Creation of Program
