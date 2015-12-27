@@ -1,4 +1,4 @@
-# 9th Percentile Cacti ISP Billing Plugin #
+# 95th Percentile Cacti ISP Billing Plugin #
 
 **Disclaimer**
 
